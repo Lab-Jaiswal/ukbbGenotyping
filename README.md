@@ -17,9 +17,9 @@ This is a package to aid in genotyping data from the UkBioBank data repository
         - bgen_to_pgen.sh
         - submit_bgen_to_pgen.sh
 8. Customize the SBATCH header in `make_pgen.sh` to meet your institution's conventions:
-        a. memory may be reduced up to 64GB
-        b. time may be reduced to as little as 12 hours, but I recommend 24 if you reduce the memory
-        c. cpus-per-task *must* stay equal to one
+    * memory may be reduced up to 64GB
+    * time may be reduced to as little as 12 hours, but I recommend 24 if you reduce the memory
+    * cpus-per-task *must* stay equal to one
 9. Run submit_make_pgen.sh using the following command:
 
         ./sumbit_make_pgen.sh /loaction/of/your/bgen/and/sample/files /location/where/you/would/like/the/output/saved
