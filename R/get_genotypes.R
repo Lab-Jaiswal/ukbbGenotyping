@@ -14,4 +14,5 @@ get_genotypes <- function(variants_df, directory, psam){
     bind_cols %>% as.data.frame()
   rownames(genotypes) <- psam$IID
   genotypes_df <- as_tibble(genotypes, rownames = "eid")
+  genotypes_df
 }
