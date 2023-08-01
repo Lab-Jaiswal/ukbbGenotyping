@@ -10,7 +10,7 @@ This is a package to aid in genotyping data from the UkBioBank data repository
 1. Install the ukbbGenotyping package
 ````
     library(devtools)
-    devtools::install_github("Lab-Jaiswal/ukbbGenotyping")
+    devtools::install_github("Lab-Jaiswal/ukbbGenotyping") #choose option 3
 ````
 2. Use get_variants to obtain a dataframe containing the chromosome, variant_id, and index for all of the variants of interest. A finished version of variants_df can be found at "topmed_variants_4_25.rda".
 ````
