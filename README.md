@@ -4,9 +4,8 @@ This is a package to aid in genotyping data from the UkBioBank data repository
 ## Downloading Genetic Data from the UkBioBank
 
 1. Downlaod the keyfile provided by the UkBioBank into the same folder you would like to download your data
-   
-          * It will look something like k####r####.key, where the #'s are numbers
-          * The keyfile will be emailed, along with and MD5 checksum and instructions, by the UkBioBank once your data is ready.
+          - It will look something like k####r####.key, where the #'s are numbers
+          - The keyfile will be emailed, along with and MD5 checksum and instructions, by the UkBioBank once your data is ready.
 3. Save `parallel_fetch.sh` to the same folder you would like to download your data
 
         a. `parallel_fetch.sh` can be found [here](https://github.com/neurodatascience/ukbm)
