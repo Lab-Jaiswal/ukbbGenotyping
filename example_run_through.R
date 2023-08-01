@@ -14,8 +14,7 @@ sequnce <- seq(1:22) %>% append(c("X"))
 chr_list<- sprintf("c%s", sequnce) 
 
 variants_df <- get_variants(chr_list[21:23], rsids, directory) 
-pgen_list <- get_pgen_list(chr_list[21:23], directory)
 
-all_genotypes <- get_all_genotypes(variants_df, pgen_list, directory)
+all_genotypes <- get_all_genotypes(variants_df, directory)
 
 #write_rds(geno_full, "ukbiobank_genotypes.rda")
