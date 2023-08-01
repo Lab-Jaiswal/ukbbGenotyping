@@ -7,19 +7,17 @@ This is a package to aid in genotyping data from the UkBioBank data repository
     * It will look something like k####r####.key, where the #'s are numbers
     * The keyfile will be emailed, along with and MD5 checksum and instructions, by the UkBioBank once your data is ready.
 3. Save `parallel_fetch.sh` to the same folder you would like to download your data
-
-        a. `parallel_fetch.sh` can be found [here](https://github.com/neurodatascience/ukbm)
+    * `parallel_fetch.sh` can be found [here](https://github.com/neurodatascience/ukbm)
 5. Run `bash parallel_fetch.sh -f 22828 gfetch k####r####.key`
-
-        a. If you wish to download another genetic field, swap out 22828 for the field_id
-        b. This step will take anywhere from 12-24 hours and otuput .sample and .bgen files for every chromosome
-        c. You can download each .sample/.bgen pair on a per chromosome basis using `gfetch 22828 -c#` (the # is the number chromosome you want downlaoded); however, if you wish to analyze genetic data across multiple chromosomes, `parallel_fetch.sh` is much faster and memory efficient
+    * If you wish to download another genetic field, swap out 22828 for the field_id
+    * This step will take anywhere from 12-24 hours and otuput .sample and .bgen files for every chromosome
+    * You can download each .sample/.bgen pair on a per chromosome basis using `gfetch 22828 -c#` (the # is the number chromosome you want downlaoded); however, if you wish to analyze genetic data across multiple chromosomes, `parallel_fetch.sh` is much faster and memory efficient
 7. Once the .sample and .bgen files have been generated, download the following files from the [inst/bash](https://github.com/Lab-Jaiswal/ukbbGenotyping/tree/main/inst/bash) folder in this package:
         
         - bgen_to_pgen.sh
         - submit_bgen_to_pgen.sh
 8. Customize the SBATCH header in `make_pgen.sh` to meet your institution's conventions:
-        a.  memory may be reduced up to 64GB
+        a. memory may be reduced up to 64GB
         b. time may be reduced to as little as 12 hours, but I recommend 24 if you reduce the memory
         c. cpus-per-task *must* stay equal to one
 9. Run submit_make_pgen.sh using the following command:
