@@ -14,4 +14,4 @@ Imports:
 	devtools,
 	magrittr,
 	tidyverse,
-	pgenlibr,
+	pgenlibr
