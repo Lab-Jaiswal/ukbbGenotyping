@@ -4,7 +4,7 @@
 \alias{get_all_genotypes}
 \title{Make a geno_full}
 \usage{
-get_all_genotypes(variants_df, pgen_list, directory)
+get_all_genotypes(variants_df, directory)
 }
 \arguments{
 \item{variants_df}{dataframe containing all of the variants in the directory, created with get_directory_variants}
