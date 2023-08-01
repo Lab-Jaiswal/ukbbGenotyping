@@ -17,7 +17,7 @@ This is a package to aid in genotyping data from the UkBioBank data repository
     directory <- "/path/to/pgen/psam/pvar/data"
     rsids <- listOfRsids
     sequnce <- seq(1:22) %>% append(c("X"))
-    chr_list <- sprintf("chr%s", sequnce)
+    chr_list <- sprintf("c%s", sequnce)
     variants_df <- get_varaints(chr_list, rsids, directory) %>% filter(!is.na(index))
 ````
 
