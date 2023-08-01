@@ -12,10 +12,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
 	devtools,
-	GenomicRanges,
-	readxl,
 	magrittr,
 	tidyverse,
 	pgenlibr,
-	ukbtools,
-	lubridate
