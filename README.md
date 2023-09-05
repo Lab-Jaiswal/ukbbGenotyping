@@ -24,6 +24,32 @@ This is a package to aid in genotyping data from the UkBioBank data repository
 
         ./sumbit_make_pgen.sh /loaction/of/your/bgen/and/sample/files /location/where/you/would/like/the/output/saved
 
+## Installation
+### Vim
+ 1. Start an srun session
+ 2. Srun -c 16 –mem 128G -t 8:00:00 -A default -p interactive –pty zsh
+ 3. Install and call package
+    - `devtools::install_github("Lab-Jasiwal/ukbbGenotyping", dependencies = TRUE)`
+    - library(ukbbGenotyping)
+ 4. Call needed dependencies
+    - library(tidyverse)
+    - library(pgenlibr)
+    - library(magrittr)
+
+### ondemand R Studio
+ 1. Go to R Studio Server
+    - https://ondemand.scg.stanford.edu/pun/sys/dashboard/batch_connect/sys/rstudio/session_contexts/new
+ 2. Select options:
+    - R Version: 4.2.2
+    - Number of cores: 16
+    - Amount of memory: 258
+ 3. Click "Launch"
+ 4. Call needed dependencies
+    - library(ukbbGenotyping)
+    - library(tidyverse)
+    - library(pgenlibr)
+    - library(magrittr)
+
 ## Obtaining Genotype Information
 ### Required Information
 1. A list of the rsids of interest (please see chip_snps_vep_annotated_rsid.tsv)
@@ -31,19 +57,7 @@ This is a package to aid in genotyping data from the UkBioBank data repository
 3. List of chromosomes containing the rsids in step 1
 
 ### Obtaining Genotype Information from pgens
-1. Install the ukbbGenotyping package
-````
-    library(devtools)
-    devtools::install_github("Lab-Jaiswal/ukbbGenotyping") #choose option 3
-    library(ukbbGenotyping)
-````
-2. Install dependencies
-````
-    library(pgenlibr)
-    library(magrittr)
-    library(tidyverse)
-````
-3. Use get_variants to obtain a dataframe containing the chromosome, variant_id, and index for all of the variants of interest. A finished version of variants_df can be found at "topmed_variants_4_25.rda".
+1. Use get_variants to obtain a dataframe containing the chromosome, variant_id, and index for all of the variants of interest. A finished version of variants_df can be found at "topmed_variants_4_25.rda".
 ````
     directory <- "/path/to/pgen/psam/pvar/data"
     rsids <- listOfRsids
@@ -52,7 +66,7 @@ This is a package to aid in genotyping data from the UkBioBank data repository
     variants_df <- get_variants(chr_list, rsids, directory) %>% filter(!is.na(index))
 ````
 
-4. Use get_all_genotypes to get a dataframe containing the individuals and their genotypes.
+2. Use get_all_genotypes to get a dataframe containing the individuals and their genotypes.
 ````
      genotypes <- get_all_genotypes(variants_df, directory)
 ````
