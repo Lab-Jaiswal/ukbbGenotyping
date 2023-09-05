@@ -6,7 +6,7 @@ library(pgenlibr)
 #devtools::install_github("Lab-Jaiswal/ukbbGenotyping")
 library(ukbbGenotyping)
 
-directory <- "/o/s/g/sjaiswal/maurertm/ukb_genetic_files/22828_files/22828_pgens_Apr_11/"
+directory <- "/o/s/g/sjaiswal/ukbiobank/genotype_calls/pgens_Apr_11/"
 rsid_fp <- read_tsv("/o/s/p/topmed/topmed_f9/genotypes/pgen_files/chip_snps_vep_annotated_rsid.tsv", col_names = FALSE)
 rsids <- rsid_fp %>% pull(X5)
 
