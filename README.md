@@ -66,9 +66,13 @@ This is a package to aid in genotyping data from the UkBioBank data repository
     variants_df <- get_variants(chr_list, rsids, directory) %>% filter(!is.na(index))
 ````
 
+![variants_df](https://github.com/Lab-Jaiswal/ukbbGenotyping/blob/main/images/genotypes.png)https://github.com/Lab-Jaiswal/ukbbGenotyping/blob/main/images/variants_df.png)
+
 2. Use get_all_genotypes to get a dataframe containing the individuals and their genotypes.
 ````
      genotypes <- get_all_genotypes(variants_df, directory)
 ````
+
+![genotypes](https://github.com/Lab-Jaiswal/ukbbGenotyping/blob/main/images/genotypes.png)https://github.com/Lab-Jaiswal/ukbbGenotyping/blob/main/images/genotypes.png)
 
 **__Please see example_run_through.R for more details.__**
